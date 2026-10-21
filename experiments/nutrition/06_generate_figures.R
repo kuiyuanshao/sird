@@ -44,13 +44,13 @@ base_theme <- function() theme_minimal(base_size=11) +
 
 gd <- clamp_stats(L %>% filter(cov %in% focal_lev) %>% mutate(cov=factor(cov, focal_lev)), c("cov","model","method","design"))
 p <- ggplot(gd, aes(method, colour=design)) + boxlayer() + facet_grid2(cov ~ model, scales="free_y", independent="y") +
-  labs(title="Nutrition simulation — Exposure and Interaction") + base_theme() + guides(colour=guide_legend(nrow=1))
+  labs(title="Nutrition simulation : Exposure and Interaction") + base_theme() + guides(colour=guide_legend(nrow=1))
 ggsave(file.path(OUT,"simI_focal_pctbias.pdf"), p, width=10, height=7); ggsave(file.path(OUT,"simI_focal_pctbias.png"), p, width=10, height=7, dpi=200)
 
 save_other <- function(mo, base){
   gd <- clamp_stats(L %>% filter(model==mo, cov %in% phase1_lev) %>% mutate(cov=factor(cov, phase1_lev)), c("cov","method","design"))
   p <- ggplot(gd, aes(method, colour=design)) + boxlayer() + facet_wrap(~cov, ncol=3, scales="free_y") +
-    labs(title=paste0("Nutrition simulation — Phase-One Covariates (", mo, ")")) + base_theme() + guides(colour=guide_legend(nrow=1))
+    labs(title=paste0("Nutrition simulation : Phase-One Covariates (", mo, ")")) + base_theme() + guides(colour=guide_legend(nrow=1))
   ggsave(file.path(OUT,paste0(base,".pdf")), p, width=15, height=9); ggsave(file.path(OUT,paste0(base,".png")), p, width=15, height=9, dpi=200)
 }
 save_other("Gaussian", "simI_phase1cov_gaussian_pctbias")

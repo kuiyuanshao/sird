@@ -54,8 +54,8 @@ save_interaction <- function(base, ttl){
     labs(title=ttl) + base_theme + guides(colour=guide_legend(nrow=1))
   ggsave(file.path(OUT,paste0(base,".pdf")), p, width=10, height=5); ggsave(file.path(OUT,paste0(base,".png")), p, width=10, height=5, dpi=200)
 }
-save_grid(cont_imp, "surv_continuous_phase2_pctbias", "Nutrition simulationI — Continuous Phase-Two Covariates", 10)
-save_grid(cat_imp,  "surv_categorical_phase2_pctbias", "Nutrition simulationI — Binary & Categorical Phase-Two Covariates", 10)
-save_interaction("surv_interaction_pctbias", "Nutrition simulationI — Interaction")
-save_grid(phase1,   "surv_phase1cov_pctbias", "Nutrition simulationI — Phase-One Covariates", 15)
+save_grid(cont_imp, "surv_continuous_phase2_pctbias", "Survival simulation : Continuous Phase-Two Covariates", 10)
+save_grid(cat_imp,  "surv_categorical_phase2_pctbias", "Survival simulation : Binary & Categorical Phase-Two Covariates", 10)
+save_interaction("surv_interaction_pctbias", "Survival simulation : Interaction")
+save_grid(phase1,   "surv_phase1cov_pctbias", "Survival simulation : Phase-One Covariates", 15)
 cat("done ->", OUT, "\n")

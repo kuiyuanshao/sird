@@ -1,4 +1,4 @@
-## 07_generate_tables.R -- LaTeX result tables for Nutrition simulationI (survival / Cox).
+## 07_generate_tables.R -- LaTeX result tables for Survival simulation (survival / Cox).
 ## Run from experiments/survival. Emits to ./simulations/results/tables/:
 ##   tab_appc_surv_SampleE.tex, tab_appc_surv_SampleOE.tex      (Appendix C)
 ## Reads ./simulations/results/results_COMBINED.RData (six objects combined_result*_{SampleE,SampleOE}).
@@ -44,7 +44,7 @@ appc_map[[P1B]] <- c("Sex TRUE", "Insurance TRUE", "Race AFR", "Race AMR", "Race
 appc_map[[INT]] <- "Age:Insulin"
 
 CAPX <- "SIRD and comparator performance across analysis settings."
-cat("Generating Nutrition simulationI tables\n")
+cat("Generating Survival simulation tables\n")
 allcells <- rbind(cells_E, cells_OE)     # rank pools the 6 type x design combinations
 write_table(rank_table(allcells, rank_groups, "tab:sird_rank_surv", CAPX, methods_order), OUT, "tab_sird_rank_surv.tex")
 write_table(appc_table(cells_E, appc_map, appc_order, designs, design_disp, "tab:appc_surv_SampleE", CAPX), OUT, "tab_appc_surv_SampleE.tex")

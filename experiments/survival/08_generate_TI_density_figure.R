@@ -45,7 +45,7 @@ p <- ggplot(pdat, aes(value, colour = series)) +
   scale_colour_manual(values = cols, breaks = c("VAL","UNVAL",mlev), name = NULL) +
   coord_cartesian(xlim = c(0, 24)) +
   labs(x = "Survival time", y = "Density",
-       title = "Nutrition simulationI — Imputed Survival-Time Distribution by Method") +
+       title = "Survival simulation — Imputed Survival-Time Distribution by Method") +
   theme_minimal(base_size = 11) +
   theme(plot.title = element_text(face="bold", size=12),
         strip.background = element_rect(fill="grey92", colour="grey55", linewidth=0.4),

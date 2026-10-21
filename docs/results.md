@@ -1,37 +1,29 @@
-# Result availability
+# Results and reproducibility files
 
-The curated exports were copied from the thesis code at commit `c572ae00ce6b32656c9337cc84dcf39a1eb0263d`.
-Numeric values for retained methods are unchanged. Nutrition and VCCC summary
-CSVs and runtime CSVs for all three studies are included. Survival has exported
-LaTeX tables and runtime CSVs, but no per-covariate summary CSV in the source checkout.
+The repository includes generation parameters, sampling seeds, selected Python and
+R comparator configurations, tuning exports, per-replicate regression estimates,
+confidence intervals, runtime records, summary tables and the available figures.
+These files were restored from the original thesis archive. The provenance and
+checksums are recorded in `external_restore_manifest.json`.
 
-Exported LaTeX tables retain the original pooled values for SIRD and the
-comparators. Ranking colours were removed when filtering columns; the table
-generation scripts recompute rankings from the paper's method set on a new run.
-Captions are generic descriptions awaiting final manuscript wording.
+All result objects and tables are restricted to SIRD and the traditional
+comparators. Retained estimates are unchanged; only rows belonging to the excluded
+method are removed. The main bias figures and LaTeX tables can be regenerated with
+the study's `06_generate_figures.R` and `07_generate_tables.R` scripts using the
+included combined estimates. These tables recompute ranking colours for this
+paper's method set.
 
-Existing joint-method figures are not copied, because they contain a method outside
-this paper. Their plotting scripts are adapted to the retained methods. The included
-`09_plot_available_results.R` scripts generate summary and runtime figures directly
-from the included CSVs; these are distinct from replicate-level boxplots.
+The `09_plot_available_results.R` scripts create additional summary/runtime plots
+from exported CSVs. These plots describe the available summary values, rather than
+the replicate-level distribution shown by stage 06.
 
-Replicate-level combined estimates and imputed datasets are absent from the source
-checkout, so the original distribution figures and nutrition/survival table-generation
-steps need regenerated intermediate results. The nutrition generator additionally
-requires four parameter files absent from the source checkout: `multiNorm.RData`,
-`logiReg.RData`, `calibrCoeff.RData` and `outPar.RData`.
-
-Clinical records and fitted checkpoints are not included. The source provenance and
-file mapping are recorded in `migration_manifest.json` in this directory.
-
-The selected R comparator configurations (`best_config_mice.rds`,
-`best_config_rf.rds` and `best_config_mixgb.rds`) are also absent for all three
-studies. The corresponding tuning scripts are retained and can recreate these
-files when the required study inputs are available; the original selected values
-cannot be recovered from the exports alone.
+Raw cohorts, completed/imputed patient datasets and model checkpoints are excluded.
+Optional stage-08 plots use completed datasets and are separate from the combined
+regression-result exports. The clinical case study includes estimation results,
+configurations and sampling seeds, but no patient-level records.
 
 ## Verification
 
 Run `python scripts/validate_repository.py` and `Rscript scripts/check_r_syntax.R .`
 from the repository root for structural and syntax checks. These checks do not
-run the training or simulation pipeline.
+run training or regenerate simulation data.

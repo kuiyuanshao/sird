@@ -43,7 +43,7 @@ save_model <- function(mo, base){
     geom_blank(aes(y=clip)) + geom_blank(aes(y=-clip)) +
     ggh4x::facet_nested_wrap(vars(phase, cov), ncol=2, scales="free_y") +
     scale_colour_manual(values=design_cols, name="Sampling Design") +
-    labs(x="Method", y="Percentage Bias (%)", title=paste0("VCCC — ", mo)) +
+    labs(x="Method", y="Percentage Bias (%)", title=paste0("VCCC : ", mo)) +
     theme_minimal(base_size=11) +
     theme(plot.title=element_text(face="bold", size=12),
           strip.background=element_rect(fill="grey92",colour="grey55",linewidth=0.4), strip.text=element_text(face="bold",size=9.5),
