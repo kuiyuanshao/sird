@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sird"
+version = "0.1.0"
+description = "SIRD imputation for regression inference under two-phase sampling"
+requires-python = ">=3.10"
+dynamic = ["dependencies"]
+
+[tool.setuptools]
+packages = ["sird", "benchmarks", "benchmarks.gain", "benchmarks.tabcsdi"]
+package-dir = {"sird" = "src/sird"}
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}

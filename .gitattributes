@@ -1,0 +1,4 @@
+* text=auto eol=lf
+*.RData -text
+*.png -text
+*.pdf -text

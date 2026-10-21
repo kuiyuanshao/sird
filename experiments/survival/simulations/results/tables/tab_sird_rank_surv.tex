@@ -1,0 +1,37 @@
+\begin{table}[!htbp]\centering
+\definecolor{rankone}{RGB}{33,113,181}\definecolor{ranktwo}{RGB}{107,174,214}\definecolor{rankthree}{RGB}{198,219,239}
+\caption{SIRD and comparator performance across analysis settings.}
+\label{tab:sird_rank_surv}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\adjustbox{max width=\linewidth}{%
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+ & \multicolumn{1}{c}{CC} & \multicolumn{1}{c}{UNVAL} & \multicolumn{1}{c}{MICE-PMM} & \multicolumn{1}{c}{MICE-RF} & \multicolumn{1}{c}{MIXGB} & \multicolumn{1}{c}{TabCSDI} & \multicolumn{1}{c}{GAIN} & \multicolumn{1}{c}{RAKING} & \multicolumn{1}{c}{\textbf{SIRD}} \\
+\midrule
+\multicolumn{10}{l}{\textit{Continuous Phase-Two Covariates}} \\[2pt]
+\quad Mean $|$Bias$|$ (\%) & 1.2 & 6.0 & 3.8 & 4.5 & 2.0 & -- & 2.9 & 0.1 & 1.3 \\
+\quad Rel.\ RMSE (\%) & 4.4 & 6.3 & 5.1 & 4.6 & 3.1 & -- & 14.0 & 3.5 & 2.5 \\
+\quad SE ratio & 1.00 & 0.91 & 1.16 & 1.78 & 0.78 & -- & 0.10 & 0.93 & 1.37 \\
+\quad Nom.\ Cov. & 0.79 & 0.14 & 0.61 & 0.13 & 0.44 & -- & 0.15 & 0.92 & 0.89 \\
+\quad Orc.\ Cov.\ (Emp) & 0.79 & 0.15 & 0.52 & 0.05 & 0.54 & -- & 0.89 & 0.95 & 0.76 \\
+\quad Orc.\ Cov.\ (BC) & 0.95 & 0.91 & 0.93 & 0.99 & 0.87 & -- & 0.17 & 0.92 & 0.98 \\
+\midrule
+\multicolumn{10}{l}{\textit{Binary \& Categorical Phase-Two Covariates}} \\[2pt]
+\quad Mean $|$Bias$|$ (\%) & 3.0 & 6.2 & 13.4 & 2.5 & 2.0 & -- & 6.5 & 2.6 & 2.1 \\
+\quad Rel.\ RMSE (\%) & 23.3 & 9.0 & 22.9 & 6.8 & 8.8 & -- & 39.2 & 24.9 & 11.1 \\
+\quad SE ratio & 1.01 & 1.00 & 0.90 & 1.96 & 0.93 & -- & 0.23 & 0.93 & 1.40 \\
+\quad Nom.\ Cov. & 0.95 & 0.56 & 0.67 & 1.00 & 0.92 & -- & 0.35 & 0.93 & 0.99 \\
+\quad Orc.\ Cov.\ (Emp) & 0.94 & 0.59 & 0.74 & 0.84 & 0.93 & -- & 0.95 & 0.95 & 0.90 \\
+\quad Orc.\ Cov.\ (BC) & 0.96 & 0.95 & 0.90 & 1.00 & 0.93 & -- & 0.37 & 0.93 & 0.99 \\
+\midrule
+\multicolumn{10}{l}{\textit{Interaction}} \\[2pt]
+\quad Mean $|$Bias$|$ (\%) & 0.4 & 4.3 & 5.1 & 7.0 & 3.4 & -- & 5.6 & 0.1 & 3.5 \\
+\quad Rel.\ RMSE (\%) & 1.1 & 4.4 & 5.1 & 7.0 & 3.4 & -- & 6.3 & 1.0 & 3.5 \\
+\quad SE ratio & 1.00 & 0.57 & 1.00 & 2.50 & 0.67 & -- & 0.19 & 0.80 & 1.50 \\
+\quad Nom.\ Cov. & 0.86 & 0.00 & 0.00 & 0.00 & 0.01 & -- & 0.08 & 0.90 & 0.03 \\
+\quad Orc.\ Cov.\ (Emp) & 0.88 & 0.00 & 0.00 & 0.00 & 0.01 & -- & 0.27 & 0.95 & 0.00 \\
+\quad Orc.\ Cov.\ (BC) & 0.94 & 0.82 & 0.94 & 1.00 & 0.82 & -- & 0.27 & 0.91 & 0.99 \\
+\bottomrule
+\end{tabular}}
+\end{table}

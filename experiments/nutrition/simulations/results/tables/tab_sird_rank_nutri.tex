@@ -1,0 +1,29 @@
+\begin{table}[!htbp]\centering
+\definecolor{rankone}{RGB}{33,113,181}\definecolor{ranktwo}{RGB}{107,174,214}\definecolor{rankthree}{RGB}{198,219,239}
+\caption{SIRD and comparator performance across analysis settings.}
+\label{tab:sird_rank_nutri}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\adjustbox{max width=\linewidth}{%
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+ & \multicolumn{1}{c}{CC} & \multicolumn{1}{c}{UNVAL} & \multicolumn{1}{c}{MICE-PMM} & \multicolumn{1}{c}{MICE-RF} & \multicolumn{1}{c}{MIXGB} & \multicolumn{1}{c}{TabCSDI} & \multicolumn{1}{c}{GAIN} & \multicolumn{1}{c}{RAKING} & \multicolumn{1}{c}{\textbf{SIRD}} \\
+\midrule
+\multicolumn{10}{l}{\textit{Continuous Phase-Two Covariates}} \\[2pt]
+\quad Mean $|$Bias$|$ (\%) & 5.9 & 63.6 & 41.4 & 46.1 & 42.2 & 13.3 & 54.9 & 7.1 & 3.5 \\
+\quad Rel.\ RMSE (\%) & 26.6 & 63.7 & 43.5 & 46.4 & 50.2 & 23.4 & 102.0 & 30.7 & 11.0 \\
+\quad SE ratio & 1.03 & 1.01 & 0.39 & 0.62 & 0.74 & 0.24 & 0.04 & 0.78 & 1.13 \\
+\quad Nom.\ Cov. & 0.64 & 0.00 & 0.07 & 0.00 & 0.41 & 0.10 & 0.07 & 0.45 & 0.93 \\
+\quad Orc.\ Cov.\ (Emp) & 0.64 & 0.00 & 0.11 & 0.00 & 0.44 & 0.40 & 0.90 & 0.51 & 0.90 \\
+\quad Orc.\ Cov.\ (BC) & 0.95 & 0.96 & 0.77 & 0.86 & 0.79 & 0.58 & 0.07 & 0.87 & 0.95 \\
+\midrule
+\multicolumn{10}{l}{\textit{Interaction}} \\[2pt]
+\quad Mean $|$Bias$|$ (\%) & 22.1 & 64.8 & 345.3 & 56.4 & 48.1 & 39.8 & 116.9 & 42.4 & 21.4 \\
+\quad Rel.\ RMSE (\%) & 193.6 & 89.6 & 360.7 & 76.7 & 146.9 & 70.1 & 297.4 & 224.8 & 93.6 \\
+\quad SE ratio & 1.07 & 0.93 & 0.93 & 1.36 & 0.73 & 1.06 & 0.23 & 0.88 & 1.15 \\
+\quad Nom.\ Cov. & 0.93 & 0.47 & 0.09 & 0.63 & 0.75 & 0.69 & 0.38 & 0.79 & 0.94 \\
+\quad Orc.\ Cov.\ (Emp) & 0.90 & 0.47 & 0.12 & 0.52 & 0.83 & 0.66 & 0.81 & 0.89 & 0.91 \\
+\quad Orc.\ Cov.\ (BC) & 0.96 & 0.95 & 0.92 & 0.99 & 0.87 & 0.97 & 0.51 & 0.89 & 0.97 \\
+\bottomrule
+\end{tabular}}
+\end{table}
